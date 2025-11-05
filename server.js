@@ -9,6 +9,10 @@ const STATE_PATH = path.join(__dirname, 'state.json');
 
 // serve static files in repo (so saes_board_v1.html can be opened at /saes_board_v1.html)
 app.use(express.static(__dirname));
+// send root to the board
+app.get('/', (req, res) => {
+  res.redirect('/saes_portal_locations_v1.html');
+});
 
 // helpers
 function loadState(){
