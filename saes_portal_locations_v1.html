@@ -302,31 +302,20 @@
 
   /* ---------- Config (NO AMD) ---------- */
   const CONFIG = [
-    { id:'gs', title:'G&S', sections:[
-      { id:'gsUnused', title:'SAES Unused' },
-      { id:'coilConv',  title:'SAES Coil Conversion' },
-      { id:'blast',     title:'SAES Shot Blast/Test' },
-      { id:'p250HrcN15',  title:'SAES .250" HRC N15' },
-      { id:'p250HrcN25',  title:'SAES .250" HRC N25' },
-      { id:'p250AnnN15',  title:'SAES .250" Annealed N15' },
-      { id:'p250AnnN25',  title:'SAES .250" Annealed N25' },
-      { id:'p108HotN15',  title:'SAES .136" Hot Drawn N15' },
-      { id:'p108HotN25',  title:'SAES .136" Hot Drawn N25' }
-    ]},
+   { id:'gs', title:'G&S', sections:[
+  { id:'gsUnused',  title:'SAES Unused' },
+  { id:'gs250Hrc',  title:'SAES .250" HRC' },
+  { id:'gsHotDraw', title:'SAES .136" Hot Draw' }
+]},
     { id:'ferg', title:'Ferguson', sections:[
       { id:'fergUnusedN15',  title:'SAES Unused N15' },
-      { id:'fergUnusedN25',  title:'SAES Unused N25' },
-      { id:'ferg240AnnN15',  title:'SAES .240" Annealed N15' },
-      { id:'ferg240AnnN25',  title:'SAES .240" Annealed N25' },
-      { id:'ferg108HotN15',  title:'SAES .108" Hot Draw N15' },
-      { id:'ferg108HotN25',  title:'SAES .108" Hot Draw N25' }
+      { id:'ferg240AnnN15',  title:'SAES .240" Annealed' },
+      { id:'ferg108HotN15',  title:'SAES .108" Cold Draw' },
     ]},
     { id:'aba', title:'ABA', sections:[
-      { id:'abaUnusedN15', title:'SAES Unused N15' },
-      { id:'abaUnusedN25', title:'SAES Unused N25' },
-      { id:'aba085N15',    title:'SAES .085" N15' },
-      { id:'aba085N25',    title:'SAES .085" N25' }
-    ]},
+      { id:'abaUnusedN15', title:'SAES Unused' },
+      { id:'aba085N15',    title:'SAES .085"' },
+     ]},
   ];
 
   /* Lookup maps */
@@ -344,11 +333,8 @@
     const sections = {}; CONFIG.forEach(l=>l.sections.forEach(s=>sections[s.id]=[]));
 
     // simple demo seed
-    sections.coilConv.push(add('coilConv',11,'ready'));
-    sections.blast.push(add('blast',12,'issue'));
-    sections.p250HrcN15.push(add('p250HrcN15',13,'progress'));
-    sections.p108HotN15.push(add('p108HotN15',14,'ready'));
-    sections.ferg108HotN25.push(add('ferg108HotN25',16,'ready'));
+    sections.gs250Hrc?.push(add('gs250Hrc',13,'progress'));
+sections.gsHotDraw?.push(add('gsHotDraw',14,'ready'));
 
     // thresholds (defaults 0)
     const thresholds = { gs:0, ferg:0, aba:0 };
