@@ -5,7 +5,7 @@ const path = require('path');
 
 const app = express();
 app.use(express.json());
-const STATE_PATH = path.join(__dirname, 'state.json');
+const STATE_PATH = '/data/state.json';
 
 // serve static files in repo (so saes_board_v1.html can be opened at /saes_board_v1.html)
 app.use(express.static(__dirname));
